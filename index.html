@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+						## RabbitMQ
+				
+						by Slava Fomin
+					</textarea>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## What is the problem?
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 1. PDF-generator
+					
+							Client sends text -> Service emails PDF back
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 2. SMS sending for business
+					
+							Client sets:
+							1. array of telephone numbers, 
+							2. text message 
+							3. time intervals to send 
+							
+							->
+							
+							Service sends SMS
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 3. Social network
+					
+							You know it :)
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## MESSAGE BROKER (QUEUE MANAGER)
+						
+							A software where queues can be defined, applications may connect to the queue and transfer a message onto it.
+						</textarea>
+					</section>
+					<section>
+						<img src="./img/01message-queue-small.png">
+					</section>
+						<section data-markdown>
+							<textarea data-template>
+								## Why need message broker
+							
+								- To ensure loosely coupling between producer and consumer
+								- To maintain asynchronous/ non-blocking communication between producer and consumer
+								- In case consumer cannot process messages as fast as producer sending (Messages can be buffered in queue)
+							</textarea>
+						</section>
+						<section data-markdown>
+							<textarea data-template>
+								## Not only RabbitMQ
+							
+								1. Apache Kafka
+								2. RabbitMQ
+								3. Apache ActiveMQ
+								4. Kestrel
+								5. WSO2 Message Broke
+							</textarea>
+						</section>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## RabbitMQ: example
+						</textarea>
+					</section>
+					<section>
+						<img src="./img/02workflow-rabbitmq.png">
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## how it works
+						</textarea>
+					</section>
+					<section>
+						<img src="./img/03rabbitmq-beginners-updated.png">
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Exchanges
+						</textarea>
+					</section>
+					<section>
+						<img src="./img/04exchanges-bidings-routing-keys.png">
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## TYPES OF EXCHANGES
+						</textarea>
+					</section>
+					<section>
+						<img src="./img/05exchanges-topic-fanout-direct.png">
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Management Interface
+						</textarea>
+					</section>
+					<section>
+						<img src="./img/06new-rabbitmq-manager.jpg">
+					</section>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Summary
+
+						The RabbitMQ makes our life easier and faster: as for developers, as for users
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Thank you for your attention
+					</textarea>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
